@@ -2,7 +2,7 @@
 
 This project is a Tic Tac Toe game variant implemented in Rust. The game allows two players to take turns placing 'X' and 'O' on a 3x3 board with the goal of being the first to align three symbols vertically, horizontally, or diagonally. The twist is that each player can only have three pieces on the board at maximum, with the oldest piece being replaced whenver a new piece is placed to add an additional strategic component to a simple game.
 
-![Screenshot of game](img/game.png?raw=true "Title")
+<img src="img/game.png?raw=true" alt="Title" style="width: 30%; height: auto;"/>
 
 ## Installation
 
@@ -63,7 +63,7 @@ To deploy the game as a WebAssembly application and play it in a web browser, us
 
 This generates a `dist` folder as the static HTML to deploy.
 
-Alternatively, a workflow is included to automatically build and deploy to GitHub Pages. This is the version I used to deploy it [here](https://yourusername.github.io/rust_tic_tac_toe) 
+Alternatively, a workflow is included to automatically build and deploy to GitHub Pages. This is the version I used to deploy it [here](https://rbnyng.github.io/cooler_tic_tac_toe) 
 
 ## Usage
 
