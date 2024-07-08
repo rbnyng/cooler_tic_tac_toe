@@ -92,7 +92,14 @@ impl TicTacToeApp {
         if self.board[idx].is_none() && self.winner.is_none() {
             self.board[idx] = Some(self.player_turn);
             self.moves_history.push_back((idx, self.player_turn));
-            
+
+            if self.moves_history.iter().filter(|&&(_, player)| player == self.player_turn).count() > 3 {
+                if let Some(&(oldest_idx, _)) = self.moves_history.iter().find(|&&(_, player)| player == self.player_turn) {
+                    self.board[oldest_idx] = None;
+                    self.moves_history.retain(|&(i, _)| i != oldest_idx);
+                }
+            }
+
             if self.check_winner() {
                 self.winner = Some(self.player_turn);
             } else if self.check_draw() {
@@ -102,7 +109,7 @@ impl TicTacToeApp {
             }
         }
     }
-
+    
     fn check_winner(&self) -> bool {
         let b = &self.board;
         let lines = [
